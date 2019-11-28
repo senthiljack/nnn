@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM httpd
+FROM ubuntu
 
 # Set the working directory to /app
 WORKDIR /var/www/html/
@@ -10,7 +10,8 @@ COPY *.html /var/www/html/
 # Install any needed packages specified in requirements.txt
 RUN apt-get update -y
 RUN apt-get install java* -y
-#RUN apt-get install apache2 -y
+RUN apt-get install apache2 -y
+RUN apt-get install httpd* -y
 #RUN sudo systemctl start httpd
 
 
