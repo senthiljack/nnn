@@ -20,7 +20,7 @@
       cd /opt/
       docker build Dockerfile .
       #docker run -d -p 4000:80 nginx
-      docker run -it --rm --name my-running-app1 nginx
+      docker run -d -p 4001:90 nginx
 
 
 
