@@ -19,7 +19,7 @@
       #docker run -d -p 4000:80 java
       cd /opt/
       docker build -t java .
-      docker run -d java
+      docker run -d -p 4000:80 java
 
 
 
