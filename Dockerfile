@@ -1,17 +1,17 @@
 # Use an official Python runtime as a parent image
-FROM ubuntu
+#FROM ubuntu
 
 # Set the working directory to /app
-WORKDIR /var/www/html/
+#WORKDIR /var/www/html/
 
 # Copy the current directory contents into the container at /app
-COPY *.html /var/www/html/
+#COPY *.html /var/www/html/
 
 # Install any needed packages specified in requirements.txt
-RUN apt-get update -y
-RUN apt-get install java* -y
-RUN apt-get install apache2 -y
-RUN apt-get install httpd* -y
+#RUN apt-get update -y
+#RUN apt-get install java* -y
+#RUN apt-get install apache2 -y
+#RUN apt-get install httpd* -y
 #RUN sudo systemctl start httpd
 
 
@@ -23,5 +23,5 @@ RUN apt-get install httpd* -y
 
 # Run app.py when the container launches
 #CMD ["python", "app.py"]
-CMD service httpd start
+#CMD service httpd start
 #CMD java -jar /var/www/html/*.jar
