@@ -25,10 +25,4 @@
       docker run -d java-demo
 
 
-  - name: Run Docker Container
-    #docker_container:
-     # name: nginx
-      #image: nginx
-      #state: started
-      #ports:
-      # - "4000:80"
+
