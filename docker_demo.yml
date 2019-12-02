@@ -18,8 +18,8 @@
       #docker cp /opt/*.jar /opt
       #docker run -d -p 4000:80 java
       cd /opt/
-      docker build -t java-demo .
-      docker run -d java-demo
+      docker build -t java .
+      docker run -d java
 
 
 
