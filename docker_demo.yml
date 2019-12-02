@@ -17,7 +17,6 @@
       #docker pull java
       #docker cp /opt/*.jar /opt
       #docker run -d -p 4000:80 java
-      cd /opt/
       docker build -t java_deploy .
       #docker run -d -p 4000:80 nginx
       docker run -d -p 4001:90 java_deploy
