@@ -4,10 +4,7 @@
     http_port: 8080
   remote_user: root
   tasks:
-  - name: ensure docker is installed!
-    copy:
-      src: /var/lib/jenkins/workspace/maven_test/target/*.jar
-      dest: /opt/
+  
   - name: enable docker
     service:
       name: docker
