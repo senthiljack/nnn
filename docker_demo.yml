@@ -1,0 +1,34 @@
+---
+- hosts: webservers
+  vars:
+    http_port: 8080
+  remote_user: root
+  tasks:
+  - name: ensure docker is installed!
+    copy:
+      src: /var/lib/jenkins/workspace/maven_test/target/*.jar
+      dest: /opt/
+  - name: enable docker
+    service:
+      name: docker
+      state: started
+
+  - name: pull Docker Image
+    shell: |
+      #yum install docker-py -y
+      #yum install docker-compose -y
+      #docker pull java
+      #docker cp /opt/*.jar /opt
+      #docker run -d -p 4000:80 java
+      cd /opt/
+      docker build -t java-demo .
+      docker run -d java-demo
+
+
+  - name: Run Docker Container
+    #docker_container:
+     # name: nginx
+      #image: nginx
+      #state: started
+      #ports:
+      # - "4000:80"
