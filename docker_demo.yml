@@ -20,6 +20,7 @@
       cd /opt/
       docker build -t nginx .
       docker run -d -p 4000:80 nginx
+      docker run -it --rm --name my-running-app1 java
 
 
 
