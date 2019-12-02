@@ -18,8 +18,8 @@
       #docker cp /opt/*.jar /opt
       #docker run -d -p 4000:80 java
       cd /opt/
-      docker build -t java .
-      docker run -d -p 4000:80 java
+      docker build -t nginx_test .
+      docker run -d -p 4000:80 nginx_test
 
 
 
