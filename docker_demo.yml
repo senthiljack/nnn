@@ -4,10 +4,6 @@
     http_port: 8080
   remote_user: root
   tasks:
-  - name: coping Dockerfile from source to desit
-    copy:
-      src: /opt/Dockerfile
-      dest: /opt/
   - name: enable docker
     service:
       name: docker
