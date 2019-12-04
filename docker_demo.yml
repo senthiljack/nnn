@@ -23,7 +23,7 @@
       cd /opt/
       docker build -t java_deploy .
       #docker run -d -p 4000:80 nginx
-      docker run -d -p 4000:80 java_deploy
+      docker run -d -p 8080:8080 java_deploy
 
 
 
