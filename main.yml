@@ -1,10 +1,8 @@
----
+---i
 - hosts: webservers
-  tasks:
-    - debug:
-        msg: "about to start!"
+  roles:
+    - Docker
+  vars:
+    http_port: 8080
 
-    -- import_role:
-         name: Docker
-    - debug:
-        msg: "gonna end!"
+    

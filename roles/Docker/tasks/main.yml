@@ -1,8 +1,4 @@
 ---
-- hosts: webservers
-  vars:
-    http_port: 8080
-  remote_user: root
   tasks:
   - name: enable docker
     service:
