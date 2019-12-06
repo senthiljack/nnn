@@ -1,3 +1,10 @@
-
 ---
 - hosts: webservers
+  tasks:
+    - debug:
+        msg: "about to start!"
+
+    -- import_role:
+         name: Docker
+    - debug:
+        msg: "gonna end!"
