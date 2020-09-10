@@ -8,4 +8,4 @@
   - name: copying files
     copy: src=/var/lib/jenkins/workspace/computer_vision/Dockerfile dest=/opt/computer_vision/
   - name: Building docker image
-    shell: sh /opt/computer_vision/comput.sh
+    shell: sh ${WORKSPACE}/comput.sh
