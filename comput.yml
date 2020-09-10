@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: yes
+  become_method: enable
+  tasks:
+  - name: hello-world
+    yum: name=nginx state=present
+  - name: copying files
+    copy: src=/var/lib/jenkins/workspace/computer_vision/Dockerfile dest=/opt/computer_vision/
+  - name: Building docker image
+    shell: sh /opt/computer_vision/comput.sh
