@@ -7,5 +7,7 @@
     yum: name=nginx state=present
   - name: copying files
     copy: src=/var/lib/jenkins/workspace/computer_vision/Dockerfile dest=/opt/computer_vision/
+  - name: copying files
+    copy: src=/var/lib/jenkins/workspace/computer_vision/comput.sh dest=/opt/computer_vision/
   - name: Building docker image
-    shell: sh $WORKSPACE/comput.sh
+    shell: sh opt/computer_vision/comput.sh
