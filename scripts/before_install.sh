@@ -1,28 +1,47 @@
 #!/bin/bash
 
 path=/var/www/html/magento2/
-# i=$(date +%d-%b)
+
+
+###############################################
+# Dynamically determine the $magepath based
+# on the AWS Codedeploy Application Name
+###############################################
+
+case "${APPLICATION_NAME}" in
+"AWSCodeDeploy")
+   echo "Setting Path for Corradev Environment"
+   magepath="M2Dev"
+;;
+"Green_AWS_Magento_CodeDeploy")
+   echo "Setting Path for Corra Green UAT Environment"
+   magepath="M2GreenUat"
+;;
+"codedeploy-uat")
+   echo "Setting Path for Conns UAT Environment"
+   magepath="M2Uat"
+;;
+"codedeploy-prod")
+   echo "Setting Path for Conns Production Environment"
+   magepath="M2Prod"
+;;
+"Green_AWS_Magento_CodeDeploy_Prod")
+   echo "Setting Path for Conns Production Green Environment"
+   magepath="M2GreenProd"
+;;
+esac
 
 #Backup of the old verion of Magento Files
 cd $path
 
-if [ -d M2Uat ]; then
-#mkdir -p /opt/M2Uat-$i
-#mkdir -p /opt/backup/
-#mv M2Uat /opt/M2Uat-$i >> /opt/result.txt
-#cd /opt/
-#tar -czvf M2Uat-$i.tar.gz M2Uat-*
-#mv M2Uat-$i.tar.gz /opt/backup/
-cd M2Uat/pub/
-unlink media
-cd $path
-rm -rf M2Uat
+if [ -d $magepath ]; then
+    cd $magepath/pub/
+    unlink media
+    unlink docuploads
+    cd $path
+    rm -rf $magepath
 else
-echo "Directory not found"
+    echo "Directory not found"
 fi
 
-mkdir -p /var/www/html/magento2/M2Uat
-
-
-
-
+mkdir -p /var/www/html/magento2/$magepath

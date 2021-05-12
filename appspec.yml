@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: sourcecode 
-    destination: /var/www/html/magento2/M2Uat/
+    destination: /var/www/html/magento2/sourcecode/
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
