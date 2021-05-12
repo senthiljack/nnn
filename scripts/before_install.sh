@@ -8,28 +8,8 @@ path=/var/www/html/magento2/
 # on the AWS Codedeploy Application Name
 ###############################################
 
-case "${APPLICATION_NAME}" in
-"AWSCodeDeploy")
    echo "Setting Path for Corradev Environment"
-   magepath="M2Dev"
-;;
-"Green_AWS_Magento_CodeDeploy")
-   echo "Setting Path for Corra Green UAT Environment"
-   magepath="M2GreenUat"
-;;
-"codedeploy-uat")
-   echo "Setting Path for Conns UAT Environment"
-   magepath="M2Uat"
-;;
-"codedeploy-prod")
-   echo "Setting Path for Conns Production Environment"
-   magepath="M2Prod"
-;;
-"Green_AWS_Magento_CodeDeploy_Prod")
-   echo "Setting Path for Conns Production Green Environment"
-   magepath="M2GreenProd"
-;;
-esac
+   magepath="sourcecode"
 
 #Backup of the old verion of Magento Files
 cd $path
